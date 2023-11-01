@@ -1,0 +1,33 @@
+﻿@model work_sessions.Models.AppUser
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class="display-4 ms-5">Login</h1>
+<div class="row ms-4">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>            
+            <div class="form-group">
+                <input type="submit" value="LogIn" class="btn btn-primary mt-2"style="width:200px;" />
+                <a asp-action="SignUp" asp-controller="Shopping" class="btn btn-secondary mt-2">SignUp</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-warning text-decoration-none ms-2 mt-2">Back to List</a>   
+</div>
+

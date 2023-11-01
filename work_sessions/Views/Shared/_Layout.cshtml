@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <environment>
+        <script src="~/lib/jquery/jquery.js"></script>
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    </environment>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-info text-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3 fw-bold">Project</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav fw-bold fs-5">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home","Index","Home",new{},new{@class="nav-link"})
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Product","Index","Products",new{},new{@class="nav-link"})
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Shop","Index","Shopping",new{},new{@class="nav-link"})
+                    </li>                 
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <p class="text-center fw-bold"> www.Jahidul.com</p>
+    </footer>
+
+    <environment>
+        <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+
+    </environment>
+    @RenderSection("scripts",false)
+    @RenderSection("styles",false)
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model work_sessions.Models.AppUser
+
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="display-4">SignUp</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SignUp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="SignUp" class="btn btn-primary mt-2" />
+            </div>
+        </form>
+    </div>
+    <div class="col-4">
+        @if(TempData["signUp"] != null)
+        {
+            <h2 class="alert alert alert-success p-3">@TempData["signUp"]</h2>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-warning text-decoration-none mt-2">Back to List</a>
+</div>
+
